@@ -8,8 +8,8 @@ def get_number(prompt):
             print("Invalid input. Please enter a numeric value.")
 
 # Prompt the user to enter two numbers
-num1 = get_number("Enter the first number: ")
-num2 = get_number("Enter the second number: ")
+num1 = int(get_number("Enter the first number: "))
+num2 = int(get_number("Enter the second number: "))
 
 # Prompt the user to select an operation
 operation = input("Choose the operation (+, -, *, /): ")
