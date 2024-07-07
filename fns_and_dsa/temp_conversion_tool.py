@@ -1,8 +1,8 @@
 # temp_conversion_tool.py
 
 # Define global conversion factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
 def convert_to_celsius(fahrenheit):
     """
@@ -31,20 +31,29 @@ def convert_to_fahrenheit(celsius):
     return celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + 32
 
 def main():
-    try:
-        temp = float(input("Enter the temperature: "))
-        unit = input("Is the temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+    while True:
+        try:
+            temp = float(input("Enter the temperature: "))
+            unit = input("Is the temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
-        if unit == 'C':
-            converted_temp = convert_to_fahrenheit(temp)
-            print(f"{temp} Celsius is equal to {converted_temp:.2f} Fahrenheit.")
-        elif unit == 'F':
-            converted_temp = convert_to_celsius(temp)
-            print(f"{temp} Fahrenheit is equal to {converted_temp:.2f} Celsius.")
-        else:
-            print("Invalid input. Please specify 'C' for Celsius or 'F' for Fahrenheit.")
-    except ValueError:
-        print("Invalid temperature. Please enter a numeric value.")
+            if unit == 'C':
+                converted_temp = convert_to_fahrenheit(temp)
+                print(f"{temp} Celsius is equal to {converted_temp:.2f} Fahrenheit.")
+            elif unit == 'F':
+                converted_temp = convert_to_celsius(temp)
+                print(f"{temp} Fahrenheit is equal to {converted_temp:.2f} Celsius.")
+            else:
+                print("Invalid input. Please specify 'C' for Celsius or 'F' for Fahrenheit.")
+
+            # Ask if the user wants to perform another conversion
+            another_conversion = input("Do you want to perform another conversion? (yes/no): ").strip().lower()
+            if another_conversion != 'yes':
+                break
+
+        except ValueError:
+            print("Invalid temperature. Please enter a numeric value.")
 
 if __name__ == "__main__":
     main()
+
+
