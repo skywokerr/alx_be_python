@@ -1,5 +1,6 @@
 # creating a script that calculates the area of a rectangle
 # formula (Area = length × width)
+
 length = 10
 width = 5
 
